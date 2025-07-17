@@ -1,0 +1,22 @@
+#!/bin/sh
+
+mkdir -p src
+
+VARIANTS=(latte frappe macchiato mocha)
+
+DEFAULT_LIGHT=${VARIANTS[0]}
+DEFAULT_DARK=${VARIANTS[2]}
+
+for V in ${VARIANTS[@]}
+do
+  # Determine Light and Dark Theme
+  if [ $V == $DEFAULT_LIGHT ]; then
+    LIGHT=$V
+    DARK=$DEFAULT_DARK
+  else
+    LIGHT=$DEFAULT_LIGHT
+    DARK=$V
+  fi
+
+  sed -r "s/&FLAVOUR/${V^^}/g;s/&CTP(-\w+)/light-dark(var(--ctp-$LIGHT\1), var(--ctp-$DARK\1))/g" catppuccin.css > src/catppuccin-$V.css
+done
