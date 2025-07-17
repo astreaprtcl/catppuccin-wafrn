@@ -36,7 +36,7 @@
 
 ## Usage
 
-@import url('https://raw.githubusercontent.com/astreaprtcl/catppuccin-wafrn/refs/heads/main/src/catppuccin-<flavour>.css');
+@import url('https://raw.githubusercontent.com/astreaprtcl/catppuccin-wafrn/refs/heads/main/src/catppuccin_<flavour>.css');
 
 ## 💝 Thanks to
 

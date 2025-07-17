@@ -18,5 +18,5 @@ do
     DARK=$V
   fi
 
-  sed -r "s/&FLAVOUR/${V^^}/g;s/&CTP(-\w+)/light-dark(var(--ctp-$LIGHT\1), var(--ctp-$DARK\1))/g" catppuccin.css > src/catppuccin-$V.css
+  sed -r "s/&FLAVOUR/${V^^}/g;s/&CTP(-\w+)/light-dark(var(--ctp-$LIGHT\1), var(--ctp-$DARK\1))/g" catppuccin.css > src/catppuccin_$V.css
 done
