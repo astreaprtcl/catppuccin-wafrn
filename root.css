@@ -1,28 +1,13 @@
-/* CATPPUCCIN &FLAVOUR THEME :neocat_cofe_256: */
-
-/* Source Repo: https://github.com/astreaprtcl/catppuccin-wafrn */
-
-/* Catppuccin Colors */
-@import url('https://cdn.jsdelivr.net/npm/@catppuccin/palette/css/catppuccin.css');
-/* URL taken from a page within https://github.com/catppuccin/palette
- *
- * If it would be more conveinent later on, catppuccin colors could be
- * installed via NPM package. Details on doing so are in the same
- * github link.
-*/
-
-/* variables */
 :root {
-  /* I used this (--failure) when I couldn't find the variables within the
-   * site to know what to do with them. Please file a bug report if you
-   * see this color.
-  */
-  
   /* Colour variables */
   --accent1: &CTP-mauve;
   --accent2: &CTP-sky;
   --accent3: &CTP-rosewater;
   --tags: &CTP-blue;
+  /* I used this (--failure) when I couldn't find the variables within the
+   * site to know what to do with them. Please file a bug report if you
+   * see this color.
+  */
   --failure: &CTP-red;
   
   /* Text variables */
@@ -40,7 +25,7 @@
   --overlay0: &CTP-overlay0;
   --overlay1: &CTP-overlay1;
   --overlay2: &CTP-overlay2;
-  
+
   /* Primary palette variables */
   --mat-sys-primary: var(--text);
   --mat-sys-on-primary: var(--base);
@@ -103,11 +88,8 @@
   --mat-sys-surface-variant: var(--surface1);
   --mat-sys-on-surface-variant: var(--accent3);
   --mat-sys-neutral-variant20: var(--surface1); /* Variable used for the sidenav scrim (container background shadow when opened) */
-  
+
   /* other */
   --mat-badge-text-color: var(--mat-sys-on-primary);
 }
 
-.mat-mdc-list-item { 
-  height: 2rem !important;
-}

@@ -1,0 +1,19 @@
+/* CATPPUCCIN &FLAVOUR THEME :neocat_cofe_256: */
+
+/* Source Repo: https://github.com/astreaprtcl/catppuccin-wafrn */
+
+/* Catppuccin Colors */
+@import url('https://cdn.jsdelivr.net/npm/@catppuccin/palette/css/catppuccin.css');
+/* URL taken from a page within https://github.com/catppuccin/palette
+ *
+ * If it would be more conveinent later on, catppuccin colors could be
+ * installed via NPM package. Details on doing so are in the same
+ * github link.
+*/
+
+/* variables */
+&ROOT
+
+.mat-mdc-list-item { 
+  height: 2rem !important;
+}

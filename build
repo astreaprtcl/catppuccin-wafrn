@@ -1,22 +1,20 @@
-#!/bin/sh
+#!/bin/bash
+
+replace_variables() {
+  sed -r "s/&FLAVOUR/LATTE-$2/g;/&ROOT/,\$d" $1
+  sed -r "s/^/$4/g;s/&CTP-(\w+)/$3/g" root.css
+  sed -r "1,/&ROOT/d" $1
+}
 
 mkdir -p src
 
-VARIANTS=(latte frappe macchiato mocha)
+VARIANTS=(frappe macchiato mocha)
 
-DEFAULT_LIGHT=${VARIANTS[0]}
-DEFAULT_DARK=${VARIANTS[2]}
-
+# Generate Styles
 for V in ${VARIANTS[@]}
 do
-  # Determine Light and Dark Theme
-  if [ $V == $DEFAULT_LIGHT ]; then
-    LIGHT=$V
-    DARK=$DEFAULT_DARK
-  else
-    LIGHT=$DEFAULT_LIGHT
-    DARK=$V
-  fi
-
-  sed -r "s/&FLAVOUR/${V^^}/g;s/&CTP(-\w+)/light-dark(var(--ctp-$LIGHT\1), var(--ctp-$DARK\1))/g" catppuccin.css > src/catppuccin_$V.css
+  replace_variables style.css ${V^^} "light-dark(var(--ctp-latte-\1), var(--ctp-$V-\1))" > src/catppuccin_latte-$V.css
 done
+
+# Generate usersty
+replace_variables userstyle.less "" "@\1" "    " > catppuccin.user.less
